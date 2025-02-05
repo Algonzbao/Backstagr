@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
+import { HydratedDocument, Types } from 'mongoose';
 
 export type ConcertDocument = HydratedDocument<Concert>;
 
@@ -9,31 +9,28 @@ export class Concert {
   name: string;
 
   @Prop({ required: true })
-  artist: string;
+  location: string;
 
   @Prop({ required: true })
   date: Date;
 
   @Prop({ required: true })
-  location: string;
-
-  @Prop({ required: true })
   venue: string;
 
-  @Prop({type: Number, min: 0 })
-  price: number;
+  @Prop({ required: true })
+  artist: string;
 
-  @Prop({ default: '' })
+  @Prop({ required: true })
+  capacity: number; // Aforo
+
+  @Prop()
   description?: string;
 
-  @Prop({ type: [String], default: [] })
-  attendees: string[]; // Lista de IDs de usuarios que asistirán al concierto
+  @Prop({ type: [{ type: Types.ObjectId, ref: 'User' }], default: [] })
+  attendees: Types.ObjectId[];
 
-  @Prop({ type: [String], default: [] })
-  images?: string[]; // URLs de imágenes del concierto
-
-  @Prop({ type: Boolean, default: false })
-  isSoldOut?: boolean;
+  @Prop({ type: [{ type: Types.ObjectId, ref: 'Post' }], default: [] })
+  taggedPosts: Types.ObjectId[];
 }
 
 export const ConcertSchema = SchemaFactory.createForClass(Concert);

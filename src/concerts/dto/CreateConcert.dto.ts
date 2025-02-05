@@ -1,45 +1,37 @@
-import { IsNotEmpty, IsString, IsDateString, IsNumber, IsArray, IsOptional, IsBoolean } from "class-validator";
+import { IsNotEmpty, IsOptional, IsString, IsDate, IsArray, IsNumber } from 'class-validator';
 
 export class CreateConcertDto {
-    @IsNotEmpty()
-    @IsString()
-    name: string;
+  @IsNotEmpty()
+  @IsString()
+  name: string;
 
-    @IsNotEmpty()
-    @IsString()
-    artist: string;
+  @IsNotEmpty()
+  @IsString()
+  location: string;
 
-    @IsNotEmpty()
-    @IsDateString()
-    date: string; // Fecha en formato ISO 8601
+  @IsNotEmpty()
+  @IsDate()
+  date: Date;
 
-    @IsNotEmpty()
-    @IsString()
-    location: string;
+  @IsNotEmpty()
+  @IsNumber()
+  capacity: number;
 
-    @IsNotEmpty()
-    @IsString()
-    venue: string;
+  @IsNotEmpty()
+  @IsString()
+  artist: string;
 
-    @IsNotEmpty()
-    @IsNumber()
-    price: number;
+  @IsOptional()
+  @IsString()
+  description?: string;
 
-    @IsOptional()
-    @IsString()
-    description?: string;
+  @IsOptional()
+  @IsArray()
+  @IsString({ each: true })
+  attendees?: string[]; // Lista de IDs de usuarios asistentes
 
-    @IsOptional()
-    @IsArray()
-    @IsString({ each: true })
-    attendees?: string[]; // Lista de IDs de usuarios
-
-    @IsOptional()
-    @IsArray()
-    @IsString({ each: true })
-    images?: string[];
-
-    @IsOptional()
-    @IsBoolean()
-    isSoldOut?: boolean;
+  @IsOptional()
+  @IsArray()
+  @IsString({ each: true })
+  taggedPosts?: string[]; // Lista de IDs de publicaciones asociadas
 }
