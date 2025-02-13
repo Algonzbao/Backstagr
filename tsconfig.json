@@ -18,6 +18,12 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "lib": ["esnext", "dom"],
-    "types": ["node"]
-  }
+    "types": ["node"],
+    "allowJs": true
+  },
+  "include": ["src/**/*", "src/populate-db.js"],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

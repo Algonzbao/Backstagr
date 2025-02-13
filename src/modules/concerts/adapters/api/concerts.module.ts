@@ -1,7 +1,7 @@
 import {Module} from '@nestjs/common'
 import { MongooseModule } from '@nestjs/mongoose'
 import { Concert, ConcertSchema } from 'src/schemas/concerts.schema'
-import { ConcertsService } from './concerts.service'
+import { ConcertsService } from '../services/concerts.service'
 import { ConcertsController } from './concerts.controller'
 
 @Module({

@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Param, Delete, HttpException, Patch, ValidationPipe, UsePipes } from '@nestjs/common';
-import { CommentsService } from './comments.service';
-import { CreateCommentDto } from './dto/createComment.dto';
-import { UpdateCommentDto } from './dto/updateComment.dto';
+import { CommentsService } from '../services/comments.service';
+import { CreateCommentDto } from '../dtos/createComment.dto';
+import { UpdateCommentDto } from '../dtos/updateComment.dto';
 import { Types } from 'mongoose'; // Importa Types desde mongoose
 
 @Controller('comments')

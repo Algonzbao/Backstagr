@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { UsersModule } from './users/users.module';
+import { UsersModule } from './modules/users/adapters/api/users.module';
 import { ConcertsModule } from './concerts/concerts.module';
 import { CommentsModule } from './comments/comments.module';
 import { MessagesModule } from './messages/messages.module';

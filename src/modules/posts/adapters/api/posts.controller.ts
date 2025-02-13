@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Param, Delete, HttpException, Patch, ValidationPipe, UsePipes } from '@nestjs/common';
-import { PostsService } from './posts.service';
-import { CreatePostDto } from './dto/createPost.dto';
-import { UpdatePostDto } from './dto/updatePost.dto';
+import { PostsService } from '../services/posts.service';
+import { CreatePostDto } from '../../dtos/createPost.dto';
+import { UpdatePostDto } from '../../dtos/updatePost.dto';
 import { Types } from 'mongoose'; // Import Types from mongoose
 
 @Controller('posts')

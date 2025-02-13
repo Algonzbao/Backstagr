@@ -1,8 +1,8 @@
 import { Controller, Get, Post, Body, Param, Delete, HttpException, Patch, ValidationPipe, UsePipes } from '@nestjs/common';
 import { Types } from 'mongoose';
-import { CreateMessageDto } from './dto/createMessage.dto';
-import { UpdateMessageDto } from './dto/updateMessage.dto';
-import { MessagesService } from './messages.service';
+import { CreateMessageDto } from '../../dtos/createMessage.dto';
+import { UpdateMessageDto } from '../../dtos/updateMessage.dto';
+import { MessagesService } from '../services/messages.service';
 
 @Controller('messages')
 export class MessagesController {

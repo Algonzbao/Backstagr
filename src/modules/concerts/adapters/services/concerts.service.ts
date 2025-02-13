@@ -2,8 +2,8 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Concert, ConcertDocument } from 'src/schemas/concerts.schema';
-import { CreateConcertDto } from './dto/CreateConcert.dto';
-import { UpdateConcertDto } from './dto/UpdateConcert.dto';
+import { CreateConcertDto } from '../../dtos/CreateConcert.dto';
+import { UpdateConcertDto } from '../../dtos/UpdateConcert.dto';
 
 @Injectable()
 export class ConcertsService {

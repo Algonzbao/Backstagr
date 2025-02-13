@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Comment, CommentSchema } from 'src/schemas/comments.schema'; // Import your Comment schema
-import { CommentsService } from './comments.service'; // Create a CommentsService
+import { Comment, CommentSchema } from '../../../schemas/comments.schema'; // Import your Comment schema
+import { CommentsService } from '../services/comments.service'; // Create a CommentsService
 import { CommentsController } from './comments.controller'; // Create a CommentsController
 
 @Module({

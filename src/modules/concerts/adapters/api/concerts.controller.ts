@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Param, Delete, HttpException, Patch, ValidationPipe, UsePipes } from '@nestjs/common';
-import { ConcertsService } from './concerts.service';
-import { CreateConcertDto } from './dto/CreateConcert.dto';
-import {UpdateConcertDto} from './dto/UpdateConcert.dto';
+import { ConcertsService } from '../services/concerts.service';
+import { CreateConcertDto } from '../../dtos/CreateConcert.dto';
+import {UpdateConcertDto} from '../../dtos/UpdateConcert.dto';
 import mongoose from 'mongoose';
 
 
