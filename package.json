@@ -13,7 +13,7 @@
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "test": "jest",
+    "test": "jest --no-cache",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
@@ -31,7 +31,8 @@
     "class-validator": "^0.14.1",
     "mongoose": "^8.9.6",
     "reflect-metadata": "^0.2.2",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
@@ -67,10 +68,22 @@
       "json",
       "ts"
     ],
-    "rootDir": "src",
+    "rootDir": "test",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "moduleNameMapper": {
+      "^@/src/(.*)$": "<rootDir>/../src/$1",
+      "^@/http-api/(.*)$": "<rootDir>/../src/http-api/$1",
+      "^@/contexts/(.*)$": "<rootDir>/../src/contexts/$1",
+      "^@/comments/(.*)$": "<rootDir>/../src/contexts/comments/$1",
+      "^@/posts/(.*)$": "<rootDir>/../src/contexts/posts/$1",
+      "^@/concerts/(.*)$": "<rootDir>/../src/contexts/concerts/$1",
+      "^@/messages/(.*)$": "<rootDir>/../src/contexts/messages/$1",
+      "^@/users/(.*)$": "<rootDir>/../src/contexts/users/$1",
+      "^@/shared/(.*)$": "<rootDir>/../src/contexts/shared/$1",
+      "^@/tests/(.*)$": "<rootDir>/../tests/$1"
     },
     "collectCoverageFrom": [
       "**/*.(t|j)s"

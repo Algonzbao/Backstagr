@@ -6,10 +6,22 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
+    "target": "ES2024",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "paths": {
+      "@/src/*": ["src/*"],
+      "@/http-api/*": ["src/http-api/*"],
+      "@/contexts/*": ["src/contexts/*"],
+      "@/comments/*": ["src/contexts/comments/*"],
+      "@/posts/*": ["src/contexts/posts/*"],
+      "@/concerts/*": ["src/contexts/concerts/*"],
+      "@/messages/*": ["src/contexts/messages/*"],
+      "@/users/*": ["src/contexts/users/*"],
+      "@/shared/*": ["src/contexts/shared/*"],
+      "@/tests/*": ["tests/*"]
+    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
@@ -21,7 +33,7 @@
     "types": ["node"],
     "allowJs": true
   },
-  "include": ["src/**/*", "src/populate-db.js"],
+  "include": ["src/**/*", "test/**/*", "scripts/populate-db.js"],
   "exclude": [
     "node_modules",
     "dist"
