@@ -43,8 +43,8 @@ describe('CommentCreator', () => {
         const result = await commentCreator.run(dto);
 
         // THEN
-        expect(commentRepositoryMock.create).toHaveBeenCalledTimes(1); // Verificar que se llamó una vez
-        expect(commentRepositoryMock.create).toHaveBeenCalledWith(expect.any(Comment)); // Se espera que se llame con una instancia de Comment
+        expect(commentRepositoryMock.create).toHaveBeenCalledTimes(1);
+        expect(commentRepositoryMock.create).toHaveBeenCalledWith(expect.any(Comment));
         expect(result.comment).toMatchObject({
             text: dto.text,
             authorId: dto.authorId,
